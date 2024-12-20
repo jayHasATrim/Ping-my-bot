@@ -1,0 +1,16 @@
+# .github/workflows/ping.yml
+name: Keep Render Bot Alive
+
+on:
+  schedule:
+    # Runs every 5 minutes (adjust as needed)
+    - cron: "*/5 * * * *"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send HTTP GET request to keep bot alive
+      run: |
+        curl -X GET https://cockbotapi.onrender.com
