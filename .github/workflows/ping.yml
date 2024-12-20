@@ -5,7 +5,9 @@ on:
   schedule:
     # Runs every 5 minutes (adjust as needed)
     - cron: "*/5 * * * *"
-
+  push:
+    branches:
+      - main
 jobs:
   ping:
     runs-on: ubuntu-latest
